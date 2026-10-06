@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مركز الاستجابة للتهديدات</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#eef2f6;color:#142432}
+.app{max-width:960px;margin:auto;padding:18px}.teacher{text-align:center;font-weight:800;color:#3c5362;margin:6px 0 16px}
+.screen{background:white;border-radius:28px;min-height:620px;overflow:hidden;box-shadow:0 18px 55px #20304022}
+.hero{background:linear-gradient(120deg,#071927,#123d50);color:white;padding:34px 25px;text-align:center}
+.hero h1{margin:4px 0 10px;font-size:32px}.hero p{opacity:.9;line-height:1.9}.content{padding:25px}
+.network{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px;margin:22px 0}
+.node{padding:18px 10px;border-radius:18px;text-align:center;font-weight:800;min-height:105px;display:flex;flex-direction:column;justify-content:center}
+.internet{background:#e7f0ff}.fire{background:#fff0dc;border:2px solid #f1aa50}.device{background:#e6f7ef}.arrow{font-size:30px;color:#789}
+.factgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:18px 0}.fact{border-radius:18px;padding:17px;line-height:1.9;border:1px solid #dce5ea}
+.fact.firewall{background:#fff8ee}.fact.virus{background:#f0faf5}.type{font-weight:900;font-size:17px;margin-bottom:8px}
+.note{background:#f4f0ff;border-right:6px solid #7655bf;border-radius:14px;padding:14px;line-height:1.9;margin:16px 0}
+button{font-family:inherit;cursor:pointer}.start,.next,.again{border:0;background:#173f53;color:white;border-radius:14px;padding:14px 22px;font-weight:900;font-size:16px}
+.center{text-align:center}.hide{display:none!important}
+.board{padding:22px}.status{display:flex;justify-content:space-between;gap:10px;font-weight:800;color:#506774}.progress{height:9px;background:#e6ecef;border-radius:20px;margin:12px 0 24px;overflow:hidden}.fill{height:100%;background:#287c82;transition:.25s}
+.ticket{border:2px solid #dce4e8;border-radius:20px;overflow:hidden}.ticketHead{display:flex;justify-content:space-between;align-items:center;background:#f3f6f8;padding:13px 16px;font-weight:900}.ticketBody{padding:28px 20px;min-height:155px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:20px;font-weight:800;line-height:1.9}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.answers button{border:2px solid #bfd0d6;background:white;border-radius:16px;padding:17px 12px;font-weight:900;font-size:16px;color:#183946}.answers button:hover{background:#f4f8f9}.answers button:disabled{opacity:.65;cursor:default}
+.feedback{min-height:80px;text-align:center;padding:14px;line-height:1.8;font-weight:800}.good{color:#167252}.bad{color:#ae493d}
+.special{background:#fff4ce;color:#654b00;border-radius:999px;padding:6px 11px;font-size:13px}
+.result{padding:35px 25px;text-align:center}.big{font-size:62px}.score{font-size:46px;font-weight:900;color:#176c74;margin:10px}.recap{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:right;margin:22px 0}.recap div{padding:16px;border-radius:16px;line-height:1.8;background:#f3f7f8}
+@media(max-width:680px){.network{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.factgrid,.answers,.recap{grid-template-columns:1fr}.content,.board{padding:16px}.ticketBody{font-size:18px}.hero h1{font-size:26px}}
+</style></head>
+<body><div class="app"><div class="teacher">إعداد المعلمة: بشاير الحربي</div>
+<div class="screen">
+<section id="learn">
+ <div class="hero"><div style="font-size:55px">🚨🖥️</div><h1>مركز الاستجابة للتهديدات</h1><p>أنتِ خبيرة الأمن المناوبة اليوم. اقرئي البلاغ وحددي الجهة المناسبة للتعامل معه.</p></div>
+ <div class="content">
+  <div class="network">
+   <div class="node internet">🌐<br>الإنترنت والشبكة</div><div class="arrow">←</div>
+   <div class="node fire">🔥<br>جدار الحماية<br><small>عند بوابة الاتصال</small></div><div class="arrow">←</div>
+   <div class="node device">💻🦠<br>الجهاز والملفات<br><small>مكافحة الفيروسات</small></div>
+  </div>
+  <div class="factgrid">
+   <div class="fact firewall"><div class="type">🔥 جدار الحماية</div>يراقب ويتحكم في حركة مرور الشبكة، ويمنع الوصول غير المصرح به.<br><b>النوع: قد يكون جهازًا (Hardware) أو برنامجًا (Software).</b></div>
+   <div class="fact virus"><div class="type">🦠 مكافحة الفيروسات</div>يفحص الملفات والبرامج ويكتشف البرامج الضارة ويمنعها ويزيلها.<br><b>النوع: برنامج (Software) فقط.</b></div>
+  </div>
+  <div class="note">🧠 <b>مفتاح التمييز:</b> شبكة + اتصال + وصول = جدار الحماية. &nbsp; ملفات + فحص + برامج ضارة = مكافحة الفيروسات.</div>
+  <div class="center"><button class="start" id="startBtn">ابدئي المناوبة 👩🏻‍💻</button></div>
+ </div>
+</section>
+
+<section id="quiz" class="board hide">
+ <div class="status"><span id="round"></span><span id="points">النقاط: 0</span></div><div class="progress"><div id="fill" class="fill"></div></div>
+ <div class="ticket">
+  <div class="ticketHead"><span id="kind">بلاغ أمني</span><span id="badge"></span></div>
+  <div class="ticketBody" id="question"></div>
+ </div>
+ <div class="answers" id="answers"></div>
+ <div class="feedback" id="feedback"></div>
+ <div class="center"><button id="nextBtn" class="next hide">فتح البلاغ التالي ←</button></div>
+</section>
+
+<section id="result" class="result hide">
+ <div class="big">🏆</div><h1>انتهت المناوبة بنجاح</h1><div id="finalScore" class="score"></div><p id="message"></p>
+ <div class="recap"><div><b>🔥 جدار الحماية</b><br>شبكة واتصالات ووصول.<br><b>قد يكون جهازًا أو برنامجًا.</b></div><div><b>🦠 مكافحة الفيروسات</b><br>ملفات وبرامج ضارة وفحص وإزالة.<br><b>برنامج فقط.</b></div></div>
+ <button id="againBtn" class="again">إعادة النشاط 🔄</button>
+</section>
+</div></div>
+<script>
+const questions=[
+{q:"رُصدت محاولة وصول غير مصرح بها إلى جهاز الحاسب عبر الشبكة. من يتعامل معها؟",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:0,x:"جدار الحماية يمنع الوصول غير المصرح به إلى الجهاز أو الشبكة."},
+{q:"يوجد ملف على الجهاز يُشتبه في احتوائه على برنامج ضار ويجب فحصه.",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:1,x:"مكافحة الفيروسات تفحص الملفات والبرامج بحثًا عن البرامج الضارة."},
+{q:"نحتاج إلى مراقبة حركة مرور الشبكة والتحكم فيها وفق قواعد الأمان.",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:0,x:"مراقبة حركة مرور الشبكة والتحكم فيها من وظائف جدار الحماية."},
+{q:"تم اكتشاف فيروس داخل جهاز الحاسب ونحتاج إلى منعه وإزالته.",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:1,x:"مكافحة الفيروسات تكتشف البرامج الضارة وتمنعها وتزيلها."},
+{q:"هناك متسلل يحاول الوصول إلى النظام من خلال الشبكة.",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:0,x:"منع المتسللين والوصول غير المصرح به من مهام جدار الحماية."},
+{q:"نريد فحص برنامج موجود على الجهاز بحثًا عن سلوكيات البرامج الضارة.",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:1,x:"فحص الملفات والبرامج من مهام مكافحة الفيروسات."},
+{q:"ملف مصاب بحصان طروادة موجود بالفعل على الجهاز. أي أداة أنسب؟",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:1,x:"حصان طروادة من البرامج الضارة التي تتعامل معها برامج مكافحة الفيروسات.",hard:1},
+{q:"لا يوجد ملف مصاب؛ المطلوب التحكم في الاتصالات التي تمر عبر الشبكة.",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:0,x:"التحكم في حركة مرور الشبكة من مهام جدار الحماية.",hard:1},
+{q:"نريد فحص الملفات الموجودة على جهاز الحاسب نفسه.",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:1,x:"جدار الحماية لا يفحص الملفات؛ مكافحة الفيروسات هي التي تفحصها.",hard:1},
+{q:"المطلوب منع جهة غير مصرح لها من الوصول إلى الشبكة، وليس إزالة ملف ضار.",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:0,x:"هذه مشكلة وصول واتصال بالشبكة، لذا هي من اختصاص جدار الحماية.",hard:1},
+{q:"ظهرت دودة حاسوبية ضمن البرامج الضارة على الجهاز.",o:["🔥 جدار الحماية","🦠 مكافحة الفيروسات"],a:1,x:"مكافحة الفيروسات تتعامل مع الفيروسات والديدان وأحصنة طروادة."},
+{q:"أي عبارة صحيحة عن نوع أداة الحماية؟",o:["جدار الحماية قد يكون جهازًا أو برنامجًا، ومكافحة الفيروسات برنامج فقط","جدار الحماية برنامج فقط، ومكافحة الفيروسات قد تكون جهازًا أو برنامجًا","كلاهما أجهزة فقط","كلاهما برامج فقط"],a:0,x:"صحيح: جدار الحماية قد يكون Hardware أو Software، أما مكافحة الفيروسات فهي Software فقط.",hard:1}
+];
+let i=0,score=0,locked=false;
+const $=id=>document.getElementById(id);
+function start(){i=0;score=0;$("learn").classList.add("hide");$("result").classList.add("hide");$("quiz").classList.remove("hide");render()}
+function render(){locked=false;const z=questions[i];$("round").textContent=`البلاغ ${i+1} من ${questions.length}`;$("points").textContent=`النقاط: ${score}`;$("fill").style.width=`${(i/questions.length)*100}%`;$("question").textContent=z.q;$("kind").textContent=z.hard?"اختبار التمييز":"بلاغ أمني";$("badge").innerHTML=z.hard?'<span class="special">⚡ لا تنخدعي</span>':"🚨";$("feedback").innerHTML="";$("nextBtn").classList.add("hide");$("answers").innerHTML=z.o.map((v,n)=>`<button data-choice="${n}">${v}</button>`).join("")}
+function choose(n){if(locked)return;const z=questions[i];if(n===z.a){locked=true;score++;$("points").textContent=`النقاط: ${score}`;$("feedback").innerHTML=`<span class="good">✅ قرار صحيح<br>${z.x}</span>`;document.querySelectorAll("[data-choice]").forEach(b=>b.disabled=true);$("nextBtn").classList.remove("hide")}else{$("feedback").innerHTML='<span class="bad">❌ راجعي مفتاح التمييز ثم حاولي مرة أخرى.</span>'}}
+function next(){i++;if(i<questions.length)render();else finish()}
+function finish(){$("quiz").classList.add("hide");$("result").classList.remove("hide");$("finalScore").textContent=`${score} / ${questions.length}`;$("message").textContent=score===questions.length?"ممتاز! أتقنتِ الفرق بين أداتي الحماية ونوع كل منهما 🌟":score>=9?"رائع جدًا! لديكِ تمييز قوي بين الأداتين 👏":"راجعي الملخص ثم أعيدي المناوبة لتثبيت الفرق 🌱"}
+document.addEventListener("click",function(e){if(e.target.closest("#startBtn")){start();return}const c=e.target.closest("[data-choice]");if(c){choose(Number(c.dataset.choice));return}if(e.target.closest("#nextBtn")){next();return}if(e.target.closest("#againBtn")){start();return}});
+</script></body></html>
